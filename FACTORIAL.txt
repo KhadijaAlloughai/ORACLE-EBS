@@ -1,0 +1,72 @@
+SQL> SET SERVEROUTPUT ON;
+SQL> 
+SQL> DECLARE 
+  2     N               NUMBER := &N;
+  3     RESULT          NUMBER := 1;
+  4     NEGATIVE_NUMBER EXCEPTION;
+  5  
+  6  BEGIN
+  7     IF N < 0 THEN 
+  8        RAISE NEGATIVE_NUMBER;
+  9     END IF;
+ 10  
+ 11     FOR I IN 1..N LOOP
+ 12        RESULT := RESULT * I;
+ 13     END LOOP;
+ 14  
+ 15     DBMS_OUTPUT.PUT_LINE('Factorial of ' || N || ' IS: ' || RESULT);
+ 16  
+ 17  EXCEPTION
+ 18     WHEN NEGATIVE_NUMBER THEN
+ 19        DBMS_OUTPUT.PUT_LINE('Error: Factorial not defined for negative numbers.');
+ 20  END;
+ 21  /
+Enter value for n: 5
+old   2:    N               NUMBER := &N;
+new   2:    N               NUMBER := 5;
+Factorial of 5 IS: 120
+
+PL/SQL procedure successfully completed.
+
+SQL> 
+
+
+
+
+DECLARE
+N NUMBER := &N;
+RESULT NUMBER := 1;
+V_DIVISOR NUMBER := &DIVISOR;
+V_TEST NUMBER;
+
+NEGATIVE_NUMBER EXCEPTION;
+
+BEGIN
+
+IF N < 0 THEN
+ RAISE NEGATIVE_NUMBER;
+END IF;
+
+FOR I IN 1..N LOOP
+ RESULT := RESULT * I;
+END LOOP;
+
+DBMS_OUTPUT.PUT_LINE('FACTORIAL OF ' || N || 'IS : ' || RESULT);
+
+V_TEST := RESULT / V_DIVISOR;
+
+DBMS_OUTPUT.PUT_LINE('RESULT / DIVISOR = ' || V_TEST);
+
+EXCEPTION
+
+ WHEN NEGATIVE_NUMBER THEN
+   DBMS_OUTPUT.PUT_LINE(' FACTORIAL DOSE NOT ACCEPT NEGATIVE NUMBER !!!');
+
+ WHEN ZERO_DIVIDE THEN
+   DBMS_OUTPUT.PUT_LINE(' CANNOT DIVIDE BY ZERO');
+
+ WHEN OTHERS THEN
+   DBMS_OUTPUT.PUT_LINE('UNEXPECTED ERROR !!!' || SQLCODE || ' - ' || SQLERRM);
+
+END;
+/
