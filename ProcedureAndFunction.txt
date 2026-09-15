@@ -1,0 +1,76 @@
+1. CREATE PROCEDURE:
+
+SQL> CREATE OR REPLACE PROCEDURE KHADIJA_PR_TEST IS
+  2  BEGIN
+  3    DBMS_OUTPUT.PUT_LINE('WELCOME TO ORACLE PROCEDURE');
+  4  END;
+  5  /
+
+Procedure created.
+
+SQL> SET SERVEROUTPUT ON; // THIS LINE USE TO "enables the client to fetch and display that buffered output after the block finishes." AND it's executed only in shortcut (SQL*Plus only).
+
+// THERE ARE TWO WAYS TO EXEC THE PROCEDURE:
+============================================================================
+1* CLI COMMAND LINE INTERFACE:
+	SQL> EXEC KHADIJA_PR_TEST;
+	WELCOME TO ORACLE PROCEDURE
+
+	PL/SQL procedure successfully completed.
+===============================================================================
+2* Anonymous block (works everywhere)
+SQL> BEGIN
+  2    KHADIJA_PR_TEST;
+  3  END;
+  4  /
+WELCOME TO ORACLE PROCEDURE
+
+PL/SQL procedure successfully completed.
+================================================================================
+
+SINCE WE ARE WORKING IN THE SAME SERVER I GOT TO EXECUTED A LIST OF PROCEDURES FOR MY COLLEGUES
+
+SQL> BEGIN
+  2  RIMA_PR_TEST;
+  3  AHED_PR_TEST;
+  4  SAFA1_PR_TEST;
+  5  END;
+  6  /
+WELCOME TO ORACLE EBS PROC...!!!
+WELCOME TO ORACLE EBS PROC...!!
+WELCOME TO ORACLE PROC...!!
+
+PL/SQL procedure successfully completed.
+
+
+==========================================================================================
+==========================================================================================
+
+2. CREATE FUNCTION:
+
+SQL> CREATE OR REPLACE FUNCTION KHADIJA_FN_TEST RETURN VARCHAR2 IS
+  2  V_MSG VARCHAR(2000);
+  3  BEGIN
+  4  V_MSG := 'WELCOME TO FUNCTION.....!!';
+  5  RETURN V_MSG;
+  6  END;
+  7  /
+
+Function created.
+
+SQL> SELECT KHADIJA_FN_TEST FROM DUAL;
+
+KHADIJA_FN_TEST
+--------------------------------------------------------------------------------
+WELCOME TO FUNCTION.....!!
+
+
+
+DECLARE
+   X VARCHAR(2000);        // declare a local variable X, type VARCHAR, max 2000 chars
+BEGIN
+   KHADIJA_PR_TEST;              // call the PROCEDURE (just executes it)
+   X := KHADIJA_FN_TEST;         // call the FUNCTION and store its return value in X
+   DBMS_OUTPUT.PUT_LINE(X);      // print the value now stored in X
+END;
+/
