@@ -1,0 +1,19 @@
+APPLICATION DEVELOPER
+o APPLICATION
+▪ VALIDATION
+• SET
+Name: KHADIJA_VS_DNO
+Datatype: NUMBER SIZE: 4
+Validation Type: TABLE Edit Information
+Table Name: EMP Column: DEPTNO
+<SAVE>
+➢ Navigate to Application Developer
+o Concurrent
+▪ Program
+Query Name: KHADIJAPARAMETERREPORT
+>PARAMETER
+Value Set: KHADIJA_VS_DNO
+<SAVE>
+➢ Now, Switch the REPSONSIBILITY
+➢ Submit the KHADIJAPARAMETERREPORT
+o DNO: • LOV for DEPTNO is Displayed
