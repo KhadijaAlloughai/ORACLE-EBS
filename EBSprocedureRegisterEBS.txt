@@ -1,0 +1,44 @@
+-First create procedure in oracle EBS should be in this way :
+   1.MANDATORY PARAMETERS
+        a. ERRBUF OUT VARCHAR2
+        b. RETCODE OUT NUMBER
+   2. FND_FILE.PUT_LINE(FND_OUTPUT, ‘ ORACLE EBS PROCEDURE !!’);
+
+
+SQL> CREATE OR REPLACE PROCEDURE KHADIJA_PR_EBS(ERRBUF OUT VARCHAR2,
+RETCODE OUT NUMBER) IS
+BEGIN
+FND_FILE.PUT_LINE(FND_FILE.OUTPUT, ‘ WELCOME TO ORACLE EBS PROC !!!’);
+END;
+/
+
+Procedure Created
+-------------------------------------------------
+second:
+
+1. Navigate to APPLICATION DEVELOPER • RESPONSIBILITY
+      a. CONCURRENT • MENU
+         i. EXECUTABLE • FUNCTION
+
+      name your procedure:
+         Name: KHADIJA_PR_EBS
+         Short Name: KHADIJA_PR_EBS
+         Application: AOL
+         Execution Method: PL/SQL Stored Procedure
+         Execution File Name: KHADIJA_PR_EBS
+         <SAVE>
+
+2. Go to View > Query by example > Enter
+         Name: KHADIJA_PR_EBS
+         View > Query by example > Run
+          YOU CAN SEE YOUR PROCEDURE DETAILS
+
+3. Again on APPLICATION DEVELOPER • RESPONSIBILITY
+        a. CONCURRENT • MENU
+         ii. CONCURRENT PROGRAM • FUNCTION
+             Name: KHADIJA_PR_EBS
+             Short Name: KHADIJA_PR_EBS
+             Application: AOL <Tab>
+             Executable: KHADIJA_PR_EBS
+             Output: HTML
+             <SAVE>
