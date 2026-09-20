@@ -1,0 +1,391 @@
+ORACLE FORMS – COMPLETE MASTER–DETAIL FORM
+CREATE MASTER BLOCK "DEPT" AND DETAIL BLOCK "EMP"
+====================================================
+
+This guide follows the Oracle Forms / EBS training notes provided.
+
+OBJECTIVE
+---------
+Create an Oracle Forms Master–Detail Form with:
+
+MASTER BLOCK  : DEPT
+DETAIL BLOCK  : EMP
+CANVAS        : CAN_DEPT_EMP
+
+Relationship:
+DEPT.DEPTNO = EMP.DEPTNO
+
+DEPTNO in DEPT = Primary Key
+DEPTNO in EMP  = Foreign Key
+
+
+PART 1 – OPEN ORACLE FORMS BUILDER
+==================================
+
+1. Open Oracle Forms Builder.
+
+2. Create a new Form Module.
+
+3. The Form Module is the main object that contains the
+   Canvas, Data Blocks, Items, and other Form components.
+
+
+PART 2 – CREATE THE CANVAS
+==========================
+
+1. In the Object Navigator, locate:
+
+   Form Module
+       |
+       +-- Canvases
+
+2. Create a new Canvas.
+
+3. Canvas name:
+
+   CAN_DEPT_EMP
+
+4. Set the Canvas type as appropriate for the normal Form
+   canvas used in the training.
+
+5. Open the Canvas in the Layout Editor.
+
+6. The Canvas is the page/area where the Form is designed.
+
+IMPORTANT:
+The Canvas is NOT the database table.
+It is the visual area where the Form items are displayed.
+
+
+PART 3 – CREATE THE MASTER DATA BLOCK (DEPT)
+=============================================
+
+1. In the Object Navigator, locate:
+
+   Data Blocks
+
+2. Create a new Data Block.
+
+3. Use the Data Block Wizard if available.
+
+4. Select the database table:
+
+   DEPT
+
+5. Select the columns required for the Master Block.
+
+6. Finish the Data Block Wizard.
+
+7. The Master Data Block is now:
+
+   DEPT
+
+8. Make sure the DEPT block is associated with the Canvas:
+
+   CAN_DEPT_EMP
+
+9. The important key in DEPT is:
+
+   DEPTNO = Primary Key
+
+
+PART 4 – CREATE THE DETAIL DATA BLOCK (EMP)
+============================================
+
+1. In the Object Navigator, locate:
+
+   Data Blocks
+
+2. Create another Data Block.
+
+3. Use the Data Block Wizard.
+
+4. Select the database table:
+
+   EMP
+
+5. Select the columns required for the Detail Block.
+
+6. Finish the Data Block Wizard.
+
+7. The Detail Data Block is now:
+
+   EMP
+
+8. Make sure the EMP block is associated with the Canvas:
+
+   CAN_DEPT_EMP
+
+9. The important relationship column is:
+
+   EMP.DEPTNO = Foreign Key
+
+
+PART 5 – CREATE THE MASTER–DETAIL RELATIONSHIP
+===============================================
+
+Master Block:
+DEPT
+
+Detail Block:
+EMP
+
+Create the Master–Detail relationship between the two blocks.
+
+Relationship condition:
+
+   DEPT.DEPTNO = EMP.DEPTNO
+
+The Master block is DEPT.
+The Detail block is EMP.
+
+The DEPTNO in DEPT is the Primary Key.
+The DEPTNO in EMP is the Foreign Key.
+
+
+NAVIGATION PATH – MASTER–DETAIL
+================================
+
+In Oracle Forms Builder, use the Object Navigator to locate
+the Data Blocks.
+
+Typical navigation:
+
+Form Module
+   |
+   +-- Data Blocks
+          |
+          +-- DEPT
+          |
+          +-- EMP
+
+To create the relationship, select the Data Blocks / Master–Detail
+relationship option available in the Form Builder version.
+
+Choose:
+
+Master Block:
+DEPT
+
+Detail Block:
+EMP
+
+Then specify/use the matching relationship column:
+
+DEPT.DEPTNO
+EMP.DEPTNO
+
+The exact wizard labels can vary by Forms Builder version, but
+the training relationship is:
+
+DEPT.DEPTNO = EMP.DEPTNO
+
+
+PART 6 – ARRANGE THE FORM ON THE CANVAS
+=======================================
+
+1. Open:
+
+   Object Navigator
+       > Canvases
+           > CAN_DEPT_EMP
+
+2. Open the Canvas in the Layout Editor.
+
+3. Place the DEPT block items in the Master area.
+
+4. Place the EMP block items in the Detail area.
+
+5. The Form should visually contain:
+
+   MASTER AREA
+   ------------
+   DEPT
+   DEPTNO
+   DNAME
+   LOC
+
+   DETAIL AREA
+   -----------
+   EMP
+   EMPNO
+   ENAME
+   JOB
+   MGR
+   HIREDATE
+   SAL
+   COMM
+   DEPTNO
+
+6. Save the Form.
+
+
+PART 7 – VERIFY THE MASTER–DETAIL RELATIONSHIP
+==============================================
+
+Check the following:
+
+1. Master Block = DEPT
+
+2. Detail Block = EMP
+
+3. Master Key = DEPT.DEPTNO
+
+4. Detail Foreign Key = EMP.DEPTNO
+
+5. Relationship:
+
+   DEPT.DEPTNO = EMP.DEPTNO
+
+6. Both blocks are displayed on the same Canvas:
+
+   CAN_DEPT_EMP
+
+
+PART 8 – SAVE THE FORM
+======================
+
+Save the Form Module.
+
+Example:
+
+   KhadijaEmp.fmb
+
+Remember:
+
+.fmb = Form Module/source file
+
+
+PART 9 – COMPILE THE FORM
+=========================
+
+Compile the Form Module.
+
+The compiled runtime Form is:
+
+   KhadijaEmp.fmx
+
+Remember:
+
+.fmx = Compiled/Runtime Form
+
+
+PART 10 – EXECUTE / TEST THE FORM
+==================================
+
+1. Execute the Form.
+
+2. Query the DEPT Master records.
+
+3. Select a DEPT record.
+
+4. The related EMP Detail records should be displayed
+   according to the Master–Detail relationship.
+
+Example:
+
+DEPTNO = 10
+
+The Detail block displays employees whose:
+
+EMP.DEPTNO = 10
+
+
+PART 11 – IMPORTANT DELETE RULE
+===============================
+
+The training notes state:
+
+You cannot DELETE a Master Record when dependencies exist.
+
+Therefore:
+
+If a DEPT record has related EMP records, the Master DEPT
+record cannot be deleted while those dependencies exist.
+
+
+PART 12 – COMPLETE NAVIGATION / WORKFLOW
+=========================================
+
+STEP 1
+------
+Open Oracle Forms Builder.
+
+STEP 2
+------
+Create New Form Module.
+
+STEP 3
+------
+Create Canvas:
+
+CAN_DEPT_EMP
+
+STEP 4
+------
+Create Data Block:
+
+DEPT
+
+STEP 5
+------
+Associate/place the DEPT block on:
+
+CAN_DEPT_EMP
+
+STEP 6
+------
+Create Data Block:
+
+EMP
+
+STEP 7
+------
+Associate/place the EMP block on:
+
+CAN_DEPT_EMP
+
+STEP 8
+------
+Create Master–Detail relationship:
+
+Master = DEPT
+Detail = EMP
+
+STEP 9
+------
+Use:
+
+DEPT.DEPTNO = EMP.DEPTNO
+
+STEP 10
+-------
+Arrange the Master and Detail items on the Canvas.
+
+STEP 11
+-------
+Save:
+
+KhadijaEmp.fmb
+
+STEP 12
+-------
+Compile:
+
+KhadijaEmp.fmx
+
+STEP 13
+-------
+Execute the Form.
+
+STEP 14
+-------
+Query a DEPT record and verify that the related EMP records
+appear in the Detail block.
+
+STEP 15
+-------
+If the Form will be registered in Oracle EBS, move the compiled
+.fmx file to the EBS Forms directory:
+
+/u01/install/VISION/fs1/EBSapps/appl/fnd/12.0.0/forms/US
