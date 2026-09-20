@@ -1,0 +1,20 @@
+SSH TO ORACLE EBS MACHINE
+============================
+
+Steps:
+
+1. Open an SSH client.
+   - On Windows, use PuTTY.
+
+2. Enter the EBS server details:
+   Host Name: EBS.EXAMPLE.COM
+   Port: 22
+   Connection Type: SSH
+
+3. Click Open.
+
+4. Login:
+   Username: root
+   Password: welcome
+
+5. After successful login, you are connected to the EBS Machine.
