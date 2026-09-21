@@ -1,0 +1,19 @@
+1. Login and switch responsibility
+
+Log in to Oracle EBS with a user that has System Administrator access, then switch responsibility to System Administrator.
+
+2. Navigate to Users
+
+Go to Security → User → Define.
+
+3. Enter user name and password
+
+In the User field, enter the new username. Enter a password, then re-enter it to confirm.
+
+4. Assign responsibilities
+
+In the Responsibilities block, add one or more responsibilities (e.g., System Administrator, Application Developer, or any custom responsibility the user needs) along with their effective dates.
+
+5. Save the record
+
+Click Save (or press the Save icon). The new user is now created and can log in with the username/password you set.
