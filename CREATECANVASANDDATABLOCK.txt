@@ -1,0 +1,266 @@
+ORACLE FORMS BUILDER
+CREATE CANVAS AND DATA BLOCK - STEP BY STEP
+=============================================
+
+PART 1 - CREATE A NEW FORM MODULE
+-------------------------------
+
+1. Open Oracle Forms Builder.
+
+2. Select:
+   File > New > Form
+
+3. A new Form Module will be created.
+
+4. Save the Form:
+   File > Save As
+
+5. Enter the Form name, for example:
+   KhadijaEmp.fmb
+
+
+PART 2 - CREATE THE CANVAS
+--------------------------
+
+6. In the Object Navigator, locate:
+   Canvases
+
+7. Right-click Canvases.
+
+8. Select:
+   New Canvas
+
+9. Enter the Canvas name:
+   CAN_DEPT_EMP
+
+10. Set the Canvas Type:
+    Content
+
+11. Set the Window:
+    MAIN
+
+12. Save the Form.
+
+
+PART 3 - CREATE THE DEPT DATA BLOCK
+-----------------------------------
+
+13. In the Object Navigator, locate:
+    Data Blocks
+
+14. Right-click Data Blocks.
+
+15. Select:
+    Data Block Wizard
+
+16. Select:
+    Table or View
+
+17. Click:
+    Next
+
+18. Select:
+    Base Table
+
+19. Enter/select the table:
+    DEPT
+
+20. Click:
+    Next
+
+21. Select the columns required from DEPT.
+
+    Recommended columns:
+    DEPTNO
+    DNAME
+    LOC
+
+22. Click:
+    Next
+
+23. Allow the wizard to create the Data Block.
+
+24. Give the Data Block the name:
+    DEPT
+
+25. Finish the Data Block Wizard.
+
+
+PART 4 - CREATE THE EMP DATA BLOCK
+----------------------------------
+
+26. In the Object Navigator, locate:
+    Data Blocks
+
+27. Right-click Data Blocks.
+
+28. Select:
+    Data Block Wizard
+
+29. Select:
+    Table or View
+
+30. Click:
+    Next
+
+31. Select:
+    Base Table
+
+32. Enter/select the table:
+    EMP
+
+33. Click:
+    Next
+
+34. Select the columns required from EMP.
+
+    Recommended columns:
+    EMPNO
+    ENAME
+    JOB
+    MGR
+    HIREDATE
+    SAL
+    COMM
+    DEPTNO
+
+35. Click:
+    Next
+
+36. Allow the wizard to create the Data Block.
+
+37. Give the Data Block the name:
+    EMP
+
+38. Finish the Data Block Wizard.
+
+
+PART 5 - PLACE THE DATA BLOCKS ON THE CANVAS
+--------------------------------------------
+
+39. Open the Layout Editor.
+
+40. Select:
+    Tools > Layout Editor
+
+41. Select the Canvas:
+    CAN_DEPT_EMP
+
+42. Locate the DEPT Data Block items.
+
+43. Place the DEPT items on the upper part of the Canvas.
+
+44. Arrange the DEPT fields clearly.
+
+45. Locate the EMP Data Block items.
+
+46. Place the EMP items below the DEPT fields.
+
+47. Arrange the EMP fields clearly.
+
+48. Save the Form.
+
+
+PART 6 - CREATE THE MASTER-DETAIL RELATIONSHIP
+----------------------------------------------
+
+49. Open the Object Navigator.
+
+50. Locate:
+    Data Blocks
+
+51. Select the DEPT Data Block.
+
+52. Use the Data Block/Relation option to create a relationship.
+
+53. Create a new Master-Detail relationship.
+
+54. Set the Master Data Block:
+    DEPT
+
+55. Set the Detail Data Block:
+    EMP
+
+56. Define the relationship using:
+
+    DEPT.DEPTNO = EMP.DEPTNO
+
+57. Confirm the relationship.
+
+58. Oracle Forms will create the required relationship objects/triggers.
+
+
+PART 7 - VERIFY THE DATA BLOCKS
+-------------------------------
+
+59. Verify that the DEPT Data Block exists.
+
+60. Verify that the EMP Data Block exists.
+
+61. Verify that both blocks are associated with:
+    CAN_DEPT_EMP
+
+62. Verify the Master-Detail relationship:
+
+    MASTER  = DEPT
+    DETAIL  = EMP
+
+63. Verify the relationship:
+
+    DEPT.DEPTNO = EMP.DEPTNO
+
+
+PART 8 - SAVE AND COMPILE
+-------------------------
+
+64. Save the Form:
+
+    File > Save
+
+65. The Form Module should be saved as:
+
+    KhadijaEmp.fmb
+
+66. Compile the Form.
+
+67. The compiled Form should be:
+
+    KhadijaEmp.fmx
+
+
+PART 9 - EXECUTE AND TEST
+-------------------------
+
+68. Execute the Form.
+
+69. Query the DEPT records.
+
+70. Select a DEPT record.
+
+71. Verify that the related EMP records are displayed.
+
+72. Test another DEPT record.
+
+73. Verify that the EMP records change according to the selected DEPT.
+
+74. Confirm that the Master-Detail relationship works correctly.
+
+
+FINAL STRUCTURE
+---------------
+
+FORM MODULE
+    |
+    +-- CANVAS
+    |     |
+    |     +-- CAN_DEPT_EMP
+    |
+    +-- DATA BLOCK
+    |     |
+    |     +-- DEPT  (MASTER)
+    |     |
+    |     +-- EMP   (DETAIL)
+    |
+    +-- RELATIONSHIP
+          |
+          +-- DEPT.DEPTNO = EMP.DEPTNO
