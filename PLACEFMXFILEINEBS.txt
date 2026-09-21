@@ -1,0 +1,26 @@
+STEPS TO PLACE .FMX FILE IN EBS
+================================
+
+1. Compile the Form:
+   KhadijaEmp.fmb -> KhadijaEmp.fmx
+
+2. Open WinSCP.
+
+3. Connect to the EBS Server.
+
+4. Locate the compiled file:
+   KhadijaEmp.fmx
+
+5. Go to the EBS Forms directory:
+   /u01/install/VISION/fs1/EBSapps/appl/fnd/12.0.0/forms/US
+
+6. Copy KhadijaEmp.fmx to:
+   /u01/install/VISION/fs1/EBSapps/appl/fnd/12.0.0/forms/US
+
+7. SSH to the EBS machine.
+
+8. Navigate to the Forms directory:
+   cd /u01/install/VISION/fs1/EBSapps/appl/fnd/12.0.0/forms/US
+
+9. Verify the file:
+   ls -l KhadijaEmp.fmx
