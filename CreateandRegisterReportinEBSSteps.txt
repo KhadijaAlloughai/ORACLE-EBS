@@ -1,0 +1,148 @@
+CREATE A PARAMETERIZED REPORT AND REGISTER IT IN ORACLE EBS
+=============================================================
+
+PART 1 - CREATE THE REPORT IN ORACLE REPORTS BUILDER
+------------------------------------------------------
+1. Open Reports Builder
+   - Open Oracle Reports Builder.
+   - Create a new Report Module.
+   - Select the required report style, such as Tabular.
+
+2. Connect to the Database
+   - Use: APPS/apps@EBSDB
+
+3. Create the Query
+   - Open Data Model.
+   - Click Query Builder.
+   - Select the EMP table.
+   - Select the required columns.
+   - Or enter directly:
+     SELECT *
+     FROM EMP
+     WHERE DEPTNO = :DNO;
+   - Here, :DNO is the Bind Parameter.
+
+4. Create the Parameter
+   - When you create the query using:
+     SELECT * FROM EMP WHERE DEPTNO = :DNO;
+   - Reports Builder automatically creates the parameter DNO.
+
+5. Save the Report
+   - Save the report as: KHADIJAPARREPORT.rdf
+   - The .rdf file is the Report Binary Format.
+
+6. Compile the Report
+   - Compile the report before moving it to the EBS server.
+
+
+PART 2 - MOVE THE REPORT TO EBS SERVER
+------------------------------------------------------
+7. Open WinSCP
+   - Connect to the EBS server.
+
+8. Move the .rdf File
+   - Move: KHADIJAPARREPORT.rdf
+   - To: /u01/install/VISION/fs1/EBSapps/appl/fnd/12.0.0/reports/US
+
+
+PART 3 - CREATE THE EXECUTABLE IN EBS
+------------------------------------------------------
+9. Login to Oracle EBS
+   - Login to EBS and switch to: Application Developer
+
+10. Navigate to Executable
+    - Go to: Application Developer > Concurrent > Executable
+
+11. Create the Executable
+    - Name: KHADIJAPARREPORT
+    - Short Name: KHADIJAPARREPORT
+    - Execution Method: Oracle Reports
+    - Execution File Name: KHADIJAPARREPORT
+    - Then Save.
+
+
+PART 4 - CREATE THE CONCURRENT PROGRAM
+------------------------------------------------------
+12. Navigate to Concurrent Program
+    - Go to: Application Developer > Concurrent > Program
+
+13. Enter Program Details
+    - Program: KHADIJAPARREPORT
+    - Short Name: KHADIJAPARREPORT
+    - Application: Application Object Library
+    - Executable: KHADIJAPARREPORT
+    - Output Format: HTML
+    - Then Save.
+
+
+PART 5 - ADD THE PARAMETER
+------------------------------------------------------
+14. Open Parameters
+    - Inside the Concurrent Program, click Parameters.
+
+15. Create Parameter DNO
+    - Name: DNO
+    - Value Set: NUM, then press TAB, select NUMBER_15
+    - Token: DNO
+    - Then Save.
+
+    Important relationship:
+    Report Query:                SELECT * FROM EMP WHERE DEPTNO = :DNO
+    Concurrent Program Parameter: DNO
+    Token:                        DNO
+
+
+PART 6 - ADD THE PROGRAM TO REQUEST GROUP
+------------------------------------------------------
+16. Switch to System Administrator
+    - Switch responsibility to: System Administrator
+
+17. Navigate to Request Group
+    - Go to: Security > Responsibility > Request
+
+18. Query the Existing Request Group
+    - Query the required existing Request Group.
+
+19. Add the Program
+    - Type: Program
+    - Add: KHADIJAPARREPORT
+    - Then Save.
+
+
+PART 7 - RUN THE REPORT
+------------------------------------------------------
+20. Switch to Your Responsibility
+    - Switch to the responsibility that has access to the Request Group.
+
+21. Open Requests
+    - Navigate to: View > Requests
+
+22. Submit a New Request
+    - Click Submit a New Request.
+    - Select Single Request.
+    - Click OK.
+
+23. Select the Report
+    - Click the LOV and select: KHADIJAPARREPORT
+
+24. Enter the Parameter
+    - The parameter field should appear: DNO
+    - Enter, for example: 30
+    - So the report executes: SELECT * FROM EMP WHERE DEPTNO = 30;
+
+25. Submit
+    - Click Submit.
+    - When asked "Submit another request?", select No.
+
+
+PART 8 - CHECK THE REPORT
+------------------------------------------------------
+26. Find the Request
+    - Click Find.
+
+27. Refresh the Request
+    - Click Refresh Data until the status becomes Completed.
+
+28. View the Report
+    - Click View Output.
+    - You should see the EMP records filtered according to the DNO value you entered.
