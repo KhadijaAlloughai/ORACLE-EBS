@@ -1,0 +1,65 @@
+QUERY BY EXAMPLE (QBE) IN ORACLE EBS
+========================================
+
+1. LOGIN TO ORACLE EBS.
+
+2. ENTER THE REQUIRED RESPONSIBILITY.
+
+3. OPEN THE FORM YOU WANT TO QUERY.
+
+4. GO TO:
+   VIEW > QUERY BY EXAMPLE > ENTER
+
+5. ENTER THE VALUE OR CONDITION YOU WANT TO SEARCH FOR.
+
+6. RUN THE QUERY:
+   VIEW > QUERY BY EXAMPLE > RUN
+
+7. OR USE THE QUERY/RUN COMMAND AVAILABLE IN THE FORM.
+
+8. REVIEW THE RECORDS RETURNED BY THE QUERY.
+
+EXAMPLE FROM THE TRAINING NOTES:
+
+QUERY THE USER:
+
+1. Login to Oracle EBS.
+2. Go to the required Responsibility.
+3. Open the User form.
+4. Select:
+   View > Query by Example > Enter
+5. Enter the required user information.
+6. Select:
+   View > Query by Example > Run
+7. The matching user record is displayed.
+
+FIND THE TABLE FROM A FORM:
+
+1. Open the required form.
+2. Go to:
+   Help > Record History
+3. Check the information shown for the record/table.
+
+QUERY BY EXAMPLE – QUICK STEPS:
+
+Login
+  ↓
+Responsibility
+  ↓
+Open Form
+  ↓
+View
+  ↓
+Query by Example
+  ↓
+Enter
+  ↓
+Enter Search Value
+  ↓
+View
+  ↓
+Query by Example
+  ↓
+Run
+  ↓
+View Results
