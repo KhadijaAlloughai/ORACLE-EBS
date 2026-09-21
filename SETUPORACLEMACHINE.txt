@@ -1,0 +1,93 @@
+ORACLE EBS MACHINE SETUP
+==================================
+
+1. PREPARE THE ORACLE EBS MACHINE
+----------------------------------
+- Prepare a server/virtual machine for Oracle EBS.
+- Confirm the operating system is supported.
+- Confirm sufficient CPU, RAM, disk space, and network connectivity.
+- Set the machine hostname and network configuration.
+- Confirm the server can communicate with the required database and client machines.
+
+2. INSTALL REQUIRED SOFTWARE
+-----------------------------
+- Install the required operating system packages and dependencies.
+- Install the Oracle Database required for the EBS environment.
+- Install the Oracle E-Business Suite software according to the EBS version being used.
+- Configure the required database and application services.
+
+3. CONFIGURE ORACLE EBS
+------------------------
+- Configure the EBS database.
+- Configure the EBS application tier.
+- Configure the EBS file system.
+- Verify the APPL_TOP location.
+
+Example training environment:
+
+/u01/install/VISION/fs1/EBSapps/appl
+
+4. VERIFY IMPORTANT EBS DIRECTORIES
+------------------------------------
+Forms directory:
+
+/u01/install/VISION/fs1/EBSapps/appl/fnd/12.0.0/forms/US
+
+Reports directory:
+
+/u01/install/VISION/fs1/EBSapps/appl/fnd/12.0.0/reports/US
+
+5. SET UP SSH ACCESS
+--------------------
+- Install/configure an SSH service on the EBS machine.
+- Confirm SSH is available on port 22.
+- From Windows, open PuTTY.
+- Enter the EBS server hostname/IP.
+- Select SSH.
+- Enter the SSH username and password.
+- Connect to the EBS machine.
+
+6. TEST SSH CONNECTION
+----------------------
+- Login successfully.
+- Confirm you receive a UNIX/Linux command prompt.
+- Test basic commands such as:
+
+pwd
+ls
+cd
+
+7. SET UP FILE TRANSFER
+-----------------------
+- Install/open WinSCP on Windows.
+- Connect to the EBS machine using the appropriate SSH/SFTP details.
+- Verify that files can be transferred between the local machine and EBS server.
+
+8. TEST FORM FILE TRANSFER
+--------------------------
+- Compile an Oracle Form from .fmb to .fmx.
+- Transfer the .fmx file using WinSCP.
+- Place the compiled Form in:
+
+/u01/install/VISION/fs1/EBSapps/appl/fnd/12.0.0/forms/US
+
+- SSH to the EBS machine.
+- Verify the file using:
+
+cd /u01/install/VISION/fs1/EBSapps/appl/fnd/12.0.0/forms/US
+
+ls -l
+
+9. VERIFY EBS SERVICES
+----------------------
+- Confirm the Oracle database is running.
+- Confirm the required EBS application services are running.
+- Test access to the Oracle EBS login page.
+- Login using an authorized EBS user.
+
+10. VERIFY EBS RESPONSIBILITIES
+-------------------------------
+- Login to Oracle EBS.
+- Confirm the required responsibilities are available.
+- Test the Application Developer responsibility if required.
+- Test System Administrator if required.
