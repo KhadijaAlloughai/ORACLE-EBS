@@ -1,0 +1,41 @@
+Part 1 — Create the Independent Value Set (KH_VS_INDPN)
+
+Log in with the Application Developer responsibility.
+Navigate: Validation > Set.
+In the Value Sets form, enter:
+Value Set Name: KH_VS_INDPN
+Description: (e.g. "Country list")
+Format Type: Char
+Maximum Size: 20
+Validation Type: Independent (this is the default)
+Save (leave the rest of the fields such as List Type/Security Type at their defaults unless your setup requires otherwise).
+
+Part 2 — Enter Values for KH_VS_INDPN
+
+Navigate: Validation > Values.
+Query/select the value set KH_VS_INDPN.
+Enter three rows, one per value:
+OMAN
+INDIA
+USA
+Save.
+
+Part 3 — Create the Dependent Value Set (KH_VS_DEPN)
+
+Navigate back to Validation > Set.
+Create a new value set:
+Value Set Name: KH_VS_DEPN
+Format Type: Char
+Maximum Size: 20
+Validation Type: Dependent
+Once Dependent is selected, an Edit Information button/region becomes available — open it and set the Independent Value Set to KH_VS_INDPN.
+Save.
+
+Part 4 — Enter Dependent Values for KH_VS_DEPN
+
+Navigate: Validation > Values.
+Query the value set KH_VS_DEPN. Because it's dependent, the form will ask you to pick (or step through) each independent value first.
+For independent value OMAN, enter dependent value MUSCAT.
+For independent value INDIA, enter dependent value DELHI.
+For independent value USA, enter dependent value NEW YORK.
+Save after each independent value's dependent row(s) are entered.
