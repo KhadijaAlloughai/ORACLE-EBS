@@ -1,0 +1,38 @@
+1. LOGIN IN ORACLE FUSION 
+
+	* Username: A.A
+	* Password: Fusion@2026
+2. Tools
+
+	➢ Reports and Analytics
+		o Browse Catalog
+			▪Catalog
+
+ • My Folders>>> New > AA (Create a Folder)
+ • Shared Folders
+
+	o Custom
+▪Demo BI
+•Payables   Open Analysis, Open Report,.. 
+•HCM
+
+➢ Global Header
+	o Create
+▪Blue Color (OTBI Reports)
+▪Yellow Color (BIP Reports)
+o Published Reporting
+
+	▪Data Model Query
+	• Name: DD_Emp
+	• Data Source: OBIEE
+	▪Query Builder
+	• Payables Invoices, Transactions Real Time
+		• OR
+	• Absence Management, Transactions Real Time
+
+		o Save as Sample Data  XML DATA
+			
+			▪<SAVE>
+▪DM_BU_AbsenceMgmt
+➢ Create Report
+o Data ModelSelect  DM_BU_AbsenceMgmt
