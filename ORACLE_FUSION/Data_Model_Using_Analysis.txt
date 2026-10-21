@@ -1,0 +1,46 @@
+CREATE A DATA MODEL USING ANALYSIS
+===================================
+
+PRE-REQUISITE
+* Analysis already created and saved
+  Example: Analysis_Payables_Supplier
+  (Payables Invoices Transaction Real Time > Supplier, Supplier Type, Supplier Number)
+
+STEPS
+1. Tools > Reports and Analytics > Create > Data Model
+
+2. Data Sets > New Data Set > OTBI Analysis
+
+3. Enter the Data Set details
+   * Name: DM_ANALYSIS_PAYABLES_SUPPLIER
+   * Analysis: Select >>> Analysis (browse the catalog and pick the saved analysis)
+   * Click OK
+
+4. Design with the required Columns
+   * Check the columns in the Diagram / Structure tab
+   * Remove the columns that are not required
+
+5. View Data
+   * Click View Data > Run
+   * Click Save as Sample Data
+
+6. Save the DM
+   * Click Save
+   * Folder: My Folders (or Shared Folders > Custom)
+   * Name: DM_ANALYSIS_PAYABLES_SUPPLIER
+
+7. Create a Report based on the DM
+   * Create > Report
+   * Use Data Model > Select the saved DM
+   * Next > Use Report Editor > Next
+   * Select layout: Table > Next
+   * Drag the required columns into the table
+   * Finish
+
+8. Save the Report
+   * Click Save
+   * Name: REPORT_PAYABLES_SUPPLIER
+   * Click View Report to check the output
+
+FLOW
+Analysis > Data Model > View Data > Save DM > Create Report > Save Report
