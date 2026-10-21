@@ -1,0 +1,42 @@
+CREATE A DASHBOARD
+===================
+
+PRE-REQUISITE
+* Analyses already created and saved
+  Example: Analysis_Payables_Supplier, Analysis_Prompt_BU
+
+STEPS
+1. Tools > Reports and Analytics > Create > Dashboard
+
+2. Enter the Dashboard details
+   * Name: Dashboard_Payables
+   * Description: (optional)
+   * Location: My Folders (or Shared Folders > Custom)
+   * Tick: Add content now
+   * Click OK
+
+3. Dashboard Builder opens
+   * Page 1 is created by default
+   * Rename the page if required
+
+4. Add content to the page
+   * Catalog pane > browse to the saved analysis
+   * Drag Analysis_Payables_Supplier into the page area
+   * Drag Analysis_Prompt_BU into the page area
+
+5. Add a Dashboard Prompt (optional)
+   * Create > Dashboard Prompt
+   * Select the column (e.g. Business Unit Name)
+   * Save the prompt
+   * Drag the prompt into the dashboard page
+
+6. Save the Dashboard
+   * Click Save
+
+7. Run the Dashboard
+   * Click Run
+   * Select the value from the prompt list
+   * Click Apply to view the filtered data
+
+FLOW
+Create > Dashboard > Name and Location > Add Page > Drag Analysis > Save > Run
